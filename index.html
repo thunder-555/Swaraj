@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Swaraj Endait
+		</title>
+		<link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/s-character-alphabet-letter-32865.png">
+	</head>
+
+<style>
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	.parallax {
+ 
+ 		background-image: url("https://wallpaperaccess.com/full/5651980.jpg");
+        min-height: 1000px; 
+ 		filter: blur(8px);
+  		-webkit-filter: blur(2px);
+  	
+  	    background-attachment: fixed;
+	    background-position: center;
+	    background-repeat: repeat;
+  		background-size: cover;
+	}
+
+	ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #1A2D2D;
+        font-family: monospace;
+        font-size: 20px;
+      }
+  
+        li {
+        float: left;
+      }
+
+       li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 15px 20px;
+        text-decoration: none;
+      }   
+
+       li a:hover {
+        background-color: #111;
+      }
+
+      .caption {
+        position: absolute;
+        left: 0;
+  		top: 50%;
+  		width: 100%;
+  	    text-align: center;
+	    color: #696969;
+	  }
+
+      .caption .border {
+      	background-color: darkslategray;
+  		color: rgb(254, 255, 255);
+  		padding: 18px;
+  		font-size: 25px;
+  		letter-spacing: 4px;
+  		font-family: helvetica;
+      }
+
+      body{
+  margin: 0;
+  background-color: #1d1e22;
+}
+#parallax {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://raw.githubusercontent.com/oscicen/oscicen.github.io/master/img/depth-3.png), url(https://raw.githubusercontent.com/oscicen/oscicen.github.io/master/img/depth-2.png), url(https://raw.githubusercontent.com/oscicen/oscicen.github.io/master/img/depth-1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: 50% 50%;
+}
+h1 {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: "Arial";
+  text-transform: uppercase;
+  opacity: .2;
+  font-size: 70px;
+}
+</style>
+
+<body>
+	<ul>
+  		<li><a class="active" href="#home">Me</a></li>
+  		<li><a href="#news">Hobbies</a></li>
+  	  	<li><a href="#contact">My Projects</a></li>
+	  	<li><a href="#about">Contact</a></li>
+	</ul>
+
+	<div class = "parallax"></div>
+
+	<div class="caption">
+  		<span class="border"><strong>Hello, I am Swaraj</strong></span>
+  	</div>
+
+  	<div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify; font-size: 20px; font-family: sans-serif;">
+  <h2 style="text-align:center;">Me</h2>
+  <p>Hey, I am Swaraj Endait. I am from India! I am currently in school. I have many hobbies, you can check them in the hobbies tab. I love Coding. You can check out the projects tab if you want to see some of my projects. I am a fan of Video Games, Math, Science. I am social with other people. My dream is to go to IIT Bombay😉. This Website is completely made in code, no templates used. This is made from scratch. Thanks, Have a look around my Website!</p>
+</div>
+
+
+<div id="parallax"><h1>Hey There!</h1></div>
+<p style="color: grey; text-align: center; font-family: arial;">Move your mouse!</p><br><br><br>
+
+
+
+</body>
+<script>
+	(function() {
+    // Add event listener
+    document.addEventListener("mousemove", parallax);
+    const elem = document.querySelector("#parallax");
+    // Magic happens here
+    function parallax(e) {
+        let _w = window.innerWidth/2;
+        let _h = window.innerHeight/2;
+        let _mouseX = e.clientX;
+        let _mouseY = e.clientY;
+        let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${50 - (_mouseY - _h) * 0.01}%`;
+        let _depth2 = `${50 - (_mouseX - _w) * 0.02}% ${50 - (_mouseY - _h) * 0.02}%`;
+        let _depth3 = `${50 - (_mouseX - _w) * 0.06}% ${50 - (_mouseY - _h) * 0.06}%`;
+        let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+        console.log(x);
+        elem.style.backgroundPosition = x;
+    }
+
+})();
+</script>
+</html>
